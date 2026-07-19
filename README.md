@@ -1,22 +1,82 @@
-# smac2026-TheMuse---Wasl
+# SMAC 2026 – The Muse – WASL
 
-Wasl is an AI-powered app that helps family members understand each other during everyday disagreements. It respectfully summarizes each perspective, reveals misunderstandings, highlights shared concerns, and helps families build empathy, find common ground, and agree on one simple action.
+## App Name
 
+WASL
 
-App Name: Wasl
+## Team Name
 
-Team Name: The Muse
+The Muse
 
-Team Members: Aisha Abdulla Alshehyari & Rawda Waleed Almazrouei
+## Team Members
 
-Competition Theme Connection: Wasl strengthens family relationships through empathy, communication, and responsible AI.
+- Aisha Abdulla Alshehyari
+- Rawda Waleed Almazrouei
 
-Problem Being Solved: Family disagreements often grow because people misunderstand each other’s feelings and intentions.
+## Project Overview
 
-Intended Users: Families, including teenagers, parents, siblings, and grandparents.
+WASL is an AI-powered family communication app designed to help family members understand each other during everyday disagreements.
 
-Planned Technology: AI-generated respectful summaries, voice recording, Arabic-English support, local data storage, and follow-up notifications.
+The final app is intended to:
 
-Current Status: Choosing the idea and the interface of the app.
+- respectfully summarize each person’s perspective
+- identify possible misunderstandings
+- highlight shared concerns
+- encourage empathy and calm communication
+- help families agree on one simple next step
 
-Basic Setup Instructions: Install the app, Register and select Arabic or English, enter a disagreement, record each person’s perspective, review the shared understanding, and agree on one small action.
+## Competition Theme Connection
+
+WASL supports stronger family relationships through empathy, communication, and responsible use of artificial intelligence.
+
+## Problem Being Solved
+
+Family disagreements can become more serious when people misunderstand each other’s feelings, intentions, or expectations.
+
+WASL aims to create a calmer and more structured way for family members to explain their views and find common ground.
+
+## Intended Users
+
+WASL is designed for families, including:
+
+- teenagers
+- parents and guardians
+- siblings
+- grandparents
+
+## Planned Features
+
+The planned final version may include:
+
+- respectful AI-generated summaries
+- speech-to-text input
+- Arabic and English language support
+- private conversation sessions
+- shared concern detection
+- personalized agreement suggestions
+- follow-up reminders and insights
+
+## Technology Plan
+
+The project is planned to use:
+
+- React
+- Vite
+- JavaScript
+- CSS
+- Supabase
+- speech recognition
+- bilingual translation support
+- Vercel deployment
+
+## Current Version
+
+my version now is nitial interface concept.
+
+It currently includes:
+
+- a basic React and Vite project
+- the first WASL visual design
+- a responsive starter layout
+
+Advanced features such as authentication, conversations, analysis, speech-to-text, and Arabic support will be added gradually in later versions in sha Allah .
