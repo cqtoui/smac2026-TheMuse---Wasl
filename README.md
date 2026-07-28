@@ -27,13 +27,13 @@ The final app is intended to:
 
 ## Competition Theme Connection
 
-WASL supports stronger family relationships through empathy, communication, and responsible use of artificial intelligence.
+WASL supports stronger family relationships through empathy, communication, and the responsible use of artificial intelligence.
 
 ## Problem Being Solved
 
 Family disagreements can become more serious when people misunderstand each other’s feelings, intentions, or expectations.
 
-WASL aims to create a calmer and more structured way for family members to explain their views and find common ground.
+WASL aims to provide a calmer and more structured way for family members to explain their views and find common ground.
 
 ## Intended Users
 
@@ -44,9 +44,9 @@ WASL is designed for families, including:
 - siblings
 - grandparents
 
-## Planned Features
+## Planned Final Features
 
-The planned final version may include:
+The complete version of WASL is planned to include:
 
 - respectful AI-generated summaries
 - speech-to-text input
@@ -55,28 +55,42 @@ The planned final version may include:
 - shared concern detection
 - personalized agreement suggestions
 - follow-up reminders and insights
+- authentication and user accounts
+- private reflections and settings
 
-## Technology Plan
+## Technology
 
-The project is planned to use:
+The project uses:
 
 - React
 - Vite
 - JavaScript
 - CSS
+- Tailwind CSS
 - Supabase
 - speech recognition
-- bilingual translation support
+- bilingual language support
 - Vercel deployment
 
 ## Current Version
 
-my version now is nitial interface concept.
+This repository currently represents **WASL Version 2**.
+
+Version 2 shows progress from the initial interface concept and introduces the main account and conversation setup flow.
 
 It currently includes:
 
-- a basic React and Vite project
-- the first WASL visual design
-- a responsive starter layout
+- splash and welcome screens
+- user registration
+- user login
+- password recovery
+- protected navigation
+- a home screen
+- new conversation setup
+- topic selection
+- participant setup
+- private session code creation
+- responsive interface design
+- the main WASL visual identity
 
-Advanced features such as authentication, conversations, analysis, speech-to-text, and Arabic support will be added gradually in later versions in sha Allah .
+
