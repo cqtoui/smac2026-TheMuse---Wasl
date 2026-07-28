@@ -91,19 +91,83 @@ This prompt supported the early interface planning. The final design, wording, s
 
 ---
 
+## Entry 4 — Fixing Project Errors
+
+**Date:** 24 July 2026
+**AI Tool Used:** ChatGPT
+
+### Prompt Used
+
+How can we identify and fix errors in a React and Vite project?
+
+### How AI Was Used
+
+ChatGPT suggested checking error messages, missing imports, file paths, dependencies, and the browser console.
+
+### Team Contribution
+
+The team reviewed the errors, tested the suggested fixes, and decided which changes were suitable for WASL.
+
+---
+
+## Entry 5 — Organizing App Features
+
+**Date:** 26 July 2026
+**AI Tool Used:** ChatGPT
+
+### Prompt Used
+
+What is a clear method for organizing app features into different development versions?
+
+### How AI Was Used
+
+ChatGPT suggested separating basic interface features, conversation setup, perspective input, and advanced analysis into gradual stages.
+
+### Team Contribution
+
+The team selected the final version structure and decided which features should appear in each WASL version.
+
+---
+
+## Entry 6 — Checking Deleted Files
+
+**Date:** 27 July 2026
+**AI Tool Used:** ChatGPT
+
+### Prompt Used
+
+How can we remove features from a project without causing broken imports or navigation errors?
+
+### How AI Was Used
+
+ChatGPT suggested checking routes, imports, buttons, components, and references to deleted files.
+
+### Team Contribution
+
+The team reviewed the project files, tested the remaining screens, and corrected any broken references.
+
+---
+
+## Entry 7 — Improving the User Flow
+
+**Date:** 29 July 2026
+**AI Tool Used:** ChatGPT
+
+### Prompt Used
+
+What methods can be used to make a family communication app simple and easy to follow?
+
+### How AI Was Used
+
+ChatGPT suggested using clear steps, simple wording, visible buttons, and a consistent layout.
+
+### Team Contribution
+
+The team reviewed the suggestions and made the final decisions about the WASL interface and user experience.
+
 ## Team Responsibility Statement
 
-our team used AI only for limited support and did not use it to create the full application.
+The team used AI for limited guidance, error explanations, and general development methods. The team remained responsible for designing, building, testing, reviewing, and making all final decisions for WASL.
 
-our team remained responsible for:
 
-- choosing the project idea
-- defining the problem
-- selecting the intended users
-- designing the interface
-- writing and organizing the project
-- testing the application
-- reviewing all AI suggestions
-- making the final decisions
-
-AI suggestions were not accepted automatically. They were reviewed, changed, or rejected when necessary.
+AI suggestions were not accepted automatically. The team checked them against the actual project, modified or rejected them when necessary, and remained accountable for the accuracy, safety, and quality of the final application.
