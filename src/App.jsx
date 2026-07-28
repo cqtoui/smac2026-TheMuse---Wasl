@@ -1,74 +1,114 @@
-import { ArrowRight, HeartHandshake, Lightbulb, MessageCircle } from "lucide-react";
+import { Toaster } from "@/components/ui/toaster";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClientInstance } from "@/lib/query-client";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
-const features = [
-  {
-    icon: MessageCircle,
-    title: "Share perspectives",
-    text: "Give each family member space to explain how they feel.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Find common ground",
-    text: "Focus on understanding before trying to solve the disagreement.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Build a next step",
-    text: "Turn the discussion into one clear and respectful agreement.",
-  },
-];
+import PageNotFound from "./lib/PageNotFound";
+import { AuthProvider, useAuth } from "@/lib/AuthContext";
+import UserNotRegisteredError from "@/components/UserNotRegisteredError";
+import ScrollToTop from "./components/ScrollToTop";
+import ProtectedRoute from "@/components/ProtectedRoute";
 
-export default function App() {
+import Login from "@/pages/Login";
+import Register from "@/pages/Register";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
+
+import Splash from "@/pages/Splash";
+import Welcome from "@/pages/Welcome";
+import Home from "@/pages/Home";
+import NewConversation from "@/pages/NewConversation";
+import Participants from "@/pages/Participants";
+import SessionCreated from "@/pages/SessionCreated";
+
+import { SettingsProvider } from "@/lib/SettingsContext";
+import SettingsApplier from "@/components/wasl/SettingsApplier";
+
+const AuthenticatedApp = () => {
+  const {
+    isLoadingAuth,
+    isLoadingPublicSettings,
+    authError,
+    navigateToLogin,
+  } = useAuth();
+
+  if (isLoadingPublicSettings || isLoadingAuth) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-white">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-wasl-soft border-t-wasl-primary" />
+      </div>
+    );
+  }
+
+  if (authError) {
+    if (authError.type === "user_not_registered") {
+      return <UserNotRegisteredError />;
+    }
+
+    if (authError.type === "auth_required") {
+      navigateToLogin();
+      return null;
+    }
+  }
+
   return (
-    <main className="app-shell">
-      <header className="topbar">
-        <a className="brand" href="#top" aria-label="WASL home">
-          <span className="brand-mark">W</span>
-          <span>WASL</span>
-        </a>
+    <SettingsProvider>
+      <SettingsApplier />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/welcome" element={<Welcome />} />
 
-        <button className="text-button" type="button">
-          About the idea
-        </button>
-      </header>
+        <Route
+          element={
+            <ProtectedRoute
+              unauthenticatedElement={<Navigate to="/login" replace />}
+            />
+          }
+        >
+          <Route path="/" element={<Home />} />
+          <Route path="/conversation/new" element={<NewConversation />} />
+          <Route
+            path="/conversation/:id/participants"
+            element={<Participants />}
+          />
+          <Route
+            path="/conversation/:id/session"
+            element={<SessionCreated />}
+          />
+        </Route>
 
-      <section className="hero" id="top">
-        <div className="eyebrow">A family communication project</div>
-        <h1>Better conversations start with feeling heard.</h1>
-        <p className="hero-copy">
-          WASL is an early concept for helping families slow down, understand both
-          sides, and agree on one respectful step forward.
-        </p>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </SettingsProvider>
+  );
+};
 
-        <button className="primary-button" type="button">
-          Explore the concept
-          <ArrowRight size={18} aria-hidden="true" />
-        </button>
-      </section>
-
-      <section className="features" aria-label="WASL concept features">
-        {features.map(({ icon: Icon, title, text }) => (
-          <article className="feature-card" key={title}>
-            <div className="icon-box">
-              <Icon size={24} aria-hidden="true" />
-            </div>
-            <h2>{title}</h2>
-            <p>{text}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="prototype-note">
-        <div>
-          <span className="status-dot" />
-          Version 1: interface concept
-        </div>
-        <p>
-          This starter version contains the visual direction only. Accounts,
-          conversations, analysis, translations, and deployment features will be
-          added in later versions.
-        </p>
-      </section>
-    </main>
+function App() {
+  return (
+    <AuthProvider>
+      <QueryClientProvider client={queryClientInstance}>
+        <Router
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
+          <ScrollToTop />
+          <AuthenticatedApp />
+        </Router>
+        <Toaster />
+      </QueryClientProvider>
+    </AuthProvider>
   );
 }
+
+export default App;

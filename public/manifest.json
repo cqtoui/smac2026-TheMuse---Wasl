@@ -1,0 +1,25 @@
+{
+  "name": "WASL",
+  "short_name": "WASL",
+  "description": "A private family communication application",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5faff",
+  "theme_color": "#0b5fa5",
+  "icons": [
+    {
+      "src": "/wasl-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wasl-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
